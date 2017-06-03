@@ -1,0 +1,2 @@
+class SnortEventCollector < ApplicationRecord
+end

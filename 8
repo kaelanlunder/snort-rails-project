@@ -1,0 +1,14 @@
+      invoke  active_record
+      create    db/migrate/20170602225529_create_snort_event_collectors.rb
+      create    app/models/snort_event_collector.rb
+      invoke    test_unit
+      create      test/models/snort_event_collector_test.rb
+      create      test/fixtures/snort_event_collectors.yml
+      invoke  resource_route
+       route    resources :snort_event_collectors
+      invoke  serializer
+      create    app/serializers/snort_event_collector_serializer.rb
+      invoke  scaffold_controller
+      create    app/controllers/snort_event_collectors_controller.rb
+      invoke    test_unit
+      create      test/controllers/snort_event_collectors_controller_test.rb

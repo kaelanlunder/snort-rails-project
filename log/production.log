@@ -1,0 +1,16 @@
+D, [2017-06-02T22:08:30.452950 #4898] DEBUG -- :   [1m[35m (4.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2017-06-02T22:08:30.475540 #4898] DEBUG -- :   [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+D, [2017-06-02T22:08:30.485850 #4898] DEBUG -- :   [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2017-06-02T22:08:30.486118 #4898] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+D, [2017-06-02T22:08:30.486328 #4898] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(3421296284631856575, 0)[0m
+D, [2017-06-02T22:08:30.491850 #4898] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+I, [2017-06-02T22:08:30.491951 #4898]  INFO -- : Migrating to CreateSnortEventCollectors (20170602220355)
+D, [2017-06-02T22:08:30.510405 #4898] DEBUG -- :   [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE `snort_event_collectors` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `abuse_queue` varchar(255), `abuse_sent` varchar(255), `cid` int, `class` varchar(255), `dst_ip` int, `dst_port` int, `icmp_code` int, `icmp_type` int, `ip_csum` int, `ip_flags` int, `ip_hlen` int, `ip_id` int, `ip_len` int, `ip_off` int, `ip_proto` int, `ip_tos` int, `ip_ttl` int, `ip_ver` int, `last_modified` timestamp NULL, `last_uid` int, `priority` int, `sid` int, `signature` varchar(255), `signature_gen` int, `signature_id` int, `signature_rev` int, `src_ip` int, `src_port` int, `status` int, `timestamp` timestamp NULL, `unified_event_id` int, `unified_event_ref` int, `unified_ref_time` timestamp NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+D, [2017-06-02T22:08:30.512838 #4898] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-06-02T22:08:30.514162 #4898] DEBUG -- :   [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170602220355')[0m
+D, [2017-06-02T22:08:30.515393 #4898] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-06-02T22:08:30.517667 #4898] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+D, [2017-06-02T22:08:30.520975 #4898] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-06-02T22:08:30.526816 #4898] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'production', '2017-06-02 22:08:30', '2017-06-02 22:08:30')[0m
+D, [2017-06-02T22:08:30.528930 #4898] DEBUG -- :   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-06-02T22:08:30.529157 #4898] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK(3421296284631856575)[0m
